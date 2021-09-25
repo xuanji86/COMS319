@@ -1,16 +1,16 @@
-function vaildate1(){
+function validate1(){
     valCheck = true;
     var resultNameCheck1 = nameCheck(document.forms["User information"]["FirstName"].value);
-    var image1 = getImage(Boolean(resultNameCheck), "FirstName");
-    var labelNotifyEmail1=nameGetNotification(Boolean(resultNameCheck1), "FirstName");
+    var image1 = getImage(Boolean(resultNameCheck1), "FirstName");
+    var labelNotifyName1=nameGetNotification(Boolean(resultNameCheck1), "FirstName");
     document.getElementById("FirstName").appendChild(image1);
-    document.getElementById("FirstName").appendChild(labelNotifyEmail1);
-    var resultNameCheck2 = nameCheck(document.forms["User information"]["LastName"].value);
-    var image2 = getImage(Boolean(resultNameCheck), "LastName");
-    var labelNotifyEmail2=nameGetNotification(Boolean(resultNameCheck2), "LastName");
-    document.getElementById("LastName").appendChild(image2);
-    document.getAnimations("LastName").appendChild(labelNotifyEmail2);
-
+    document.getElementById("FirstName").appendChild(labelNotifyName1);
+    // var resultNameCheck2 = nameCheck(document.forms["User information"]["LastName"].value);
+    // var image2 = getImage(Boolean(resultNameCheck2), "LastName");
+    // var labelNotifyEmail2=nameGetNotification(Boolean(resultNameCheck2), "LastName");
+    // document.getElementById("LastName").appendChild(image2);
+    // document.getElementById("LastName").appendChild(labelNotifyEmail2);
+    console.log(labelNotifyName1);
 }
 
 function nameGetNotification(bool, ID){
@@ -40,7 +40,6 @@ function nameCheck(name) {
     if (alphaNumCheck(name) == true){
         return true;
     }
-
     valCheck = false;
     return false;
 }
