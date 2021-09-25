@@ -1,0 +1,44 @@
+<html> 
+<head>
+<title>
+    Validation Form
+</title>
+    <meta charset = "utf-8"/>
+    <style>
+    .errorMessage{color: red;}
+    </style>
+    <script src="./validation1.js"></script>
+</head>
+
+
+<body>
+    <h1>
+    Validation Form
+    </h1>
+    
+      <form id="contact information" action="" >
+        <fieldset>
+          <legend>User Information</legend>
+          <p id="First name">
+            <label for="FirstName">First Name</label>
+            <input id="FirstName" name="FirstName" type="text" /> 
+          </p>
+          <p id="Last name">
+            <label for="LastName">Last Name</label>
+            <input id="LastName" name="LastName" type="text" />   
+          </p>
+          <p id= "Gender">
+            <label for = "Gender">Gender&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+            <select id = "Gender Select">
+                <option value="1">male</option>
+                <option value="2">female</option>
+              </select>
+          </p>
+
+
+            <input onCLick="validate1()" type="button" id="continue" name="continue" value="Continue"/>
+        </fieldset>
+      </form>
+    </body>
+
+</html>
