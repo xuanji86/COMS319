@@ -3,13 +3,14 @@ function validate1(){
     var resultNameCheck1 = nameCheck(document.forms["User information"]["FirstName"].value);
     var image1 = getImage(Boolean(resultNameCheck1), "FirstName");
     var labelNotifyName1=nameGetNotification(Boolean(resultNameCheck1), "FirstName");
-    document.getElementById("FirstName").appendChild(image1);
-    document.getElementById("FirstName").appendChild(labelNotifyName1);
-    // var resultNameCheck2 = nameCheck(document.forms["User information"]["LastName"].value);
-    // var image2 = getImage(Boolean(resultNameCheck2), "LastName");
-    // var labelNotifyEmail2=nameGetNotification(Boolean(resultNameCheck2), "LastName");
-    // document.getElementById("LastName").appendChild(image2);
-    // document.getElementById("LastName").appendChild(labelNotifyEmail2);
+    document.getElementById("First name").appendChild(image1);
+    document.getElementById("First name").appendChild(labelNotifyName1);
+
+    var resultNameCheck2 = nameCheck(document.forms["User information"]["LastName"].value);
+    var image2 = getImage(Boolean(resultNameCheck2), "LastName");
+    var labelNotifyEmail2=nameGetNotification(Boolean(resultNameCheck2), "LastName");
+    document.getElementById("Last name").appendChild(image2);
+    document.getElementById("Last name").appendChild(labelNotifyEmail2);
     console.log(labelNotifyName1);
 }
 
@@ -53,5 +54,7 @@ function alphaNumCheck(entry){
     }
 }
 
-
+function deleteCookie( name ) {
+    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  }
 
