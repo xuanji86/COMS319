@@ -11,7 +11,18 @@ function validate1(){
     var labelNotifyEmail2=nameGetNotification(Boolean(resultNameCheck2), "LastName");
     document.getElementById("Last name").appendChild(image2);
     document.getElementById("Last name").appendChild(labelNotifyEmail2);
-    console.log(labelNotifyName1);
+
+    var resultgenderCheck = dropDownCheck(document.forms["User information"]["Gender Select"].value)
+    var image3 = getImage(Boolean(resultgenderCheck), "Gender");
+    var labelNotifyGender=genderGetNotification(Boolean(resultgenderCheck),"Gender");
+    document.getElementById("Gender").appendChild(image3);
+    document.getElementById("Gender").appendChild(labelNotifyGender)
+
+    var resultStateCheck = dropDownCheck(document.forms["User information"]["State Select"].value)
+    var image3 = getImage(Boolean(resultStateCheck), "State");
+    var labelNotifyState=genderGetNotification(Boolean(resultStateCheck),"State");
+    document.getElementById("State").appendChild(image3);
+    document.getElementById("State").appendChild(labelNotifyState)
 }
 
 function nameGetNotification(bool, ID){
@@ -24,6 +35,32 @@ function nameGetNotification(bool, ID){
       }
 
     label.innerHTML = bool ? "" : "Must contain onlyalphabetic or numericcharacters.";
+    return label;
+}
+
+function genderGetNotification(bool, ID){
+    var label = document.getElementById("labelNotify" + ID);
+    if (label == null) {
+        label = document.createElement("LABEL");
+        label.id = "labelNotify" + ID;
+        // label.className = "errorMessage";
+        label.setAttribute( 'class', 'errorMessage' );
+      }
+
+    label.innerHTML = bool ? "" : "Gender can't be null";
+    return label;
+}
+
+function stateGetNotification(bool, ID){
+    var label = document.getElementById("labelNotify" + ID);
+    if (label == null) {
+        label = document.createElement("LABEL");
+        label.id = "labelNotify" + ID;
+        // label.className = "errorMessage";
+        label.setAttribute( 'class', 'errorMessage' );
+      }
+
+    label.innerHTML = bool ? "" : "State can't be null";
     return label;
 }
 
@@ -44,6 +81,15 @@ function nameCheck(name) {
     valCheck = false;
     return false;
 }
+
+function dropDownCheck(entry){
+    if(entry != "0"){
+        return true
+    }
+    valCheck = false;
+    return false;
+}
+
 
 function alphaNumCheck(entry){
     var regName = /^[a-z0-9]+$/i;
