@@ -12,6 +12,12 @@ function validate2() {
     document.getElementById("Phone").appendChild(image2);
     document.getElementById("Phone").appendChild(labelNotifyPhone);
 
+    var resultAddressCheck = addressCheck(document.forms["contact information"]["address"].value);
+    var image3 = getImage(Boolean(resultAddressCheck),"address");
+    var labelNotifyAddress = getAddressNotification(Boolean(resultAddressCheck),"address");
+    document.getElementById("Address").appendChild(image3);
+    document.getElementById("Address").appendChild(labelNotifyAddress);
+
 }
 
 function getEmailNotification(bool, ID) {
@@ -76,7 +82,7 @@ function emailCheck(email) {
 }
 
 function phoneCheck(number){
-    let regex = /^[0-9]{3}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/g
+    let regex = /^[0-9]{3}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/g;
     if (number != null && number.match(regex)) {
         return true;
     } 
@@ -84,9 +90,15 @@ function phoneCheck(number){
     valCheck = false;
     return false;
 
-
 }
-
+function addressCheck(address){
+    let regex = /([A-Za-z]+(?: [A-Za-z]+)*),?([A-Z]{2})/;
+    if (address != 0 && address.match(regex)){
+        return true;
+    }
+    valCheck = false;
+    return false;
+}
 
 function alphaNumCheck(entry) {
     let regex = /^[a-z0-9]+$/i;
