@@ -23,6 +23,10 @@ function validate1(){
     var labelNotifyState=genderGetNotification(Boolean(resultStateCheck),"State");
     document.getElementById("State").appendChild(image3);
     document.getElementById("State").appendChild(labelNotifyState)
+
+    if(valCheck == true){
+        window.open("validation2.html");
+    }
 }
 
 function nameGetNotification(bool, ID){
