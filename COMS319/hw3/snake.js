@@ -3,6 +3,21 @@ var movement = 2;
 
 var update_loop = setInterval(loop, 100);
 
+function loop(){
+    
+	if(Started){
+		if(y == 293 || y == 2 || x == 293 || x == 2){startStop();}
+		x += dx;
+		y += dy;
+	
+		var canvas = document.getElementById('snakeBoard');
+		var context = canvas.getContext('2d');
+		context.fillStyle = 'red';
+		context.rect(x,y,5,5);
+		context.fill();
+	}	
+}
+
 //snake head current location = x and y
 //snake head next location = dx and dy
 //directions =   0    1      2     3 
@@ -65,17 +80,3 @@ function turnLeft(){
 	}
 }
 
-function loop(){
-    
-	if(Started){
-		if(y == 293 || y == 2 || x == 293 || x == 2){startStop();}
-		x += dx;
-		y += dy;
-	
-		var canvas = document.getElementById('snakeBoard');
-		var context = canvas.getContext('2d');
-		context.fillStyle = 'red';
-		context.rect(x,y,5,5);
-		context.fill();
-	}	
-}
